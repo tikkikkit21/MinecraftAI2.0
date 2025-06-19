@@ -5,7 +5,7 @@ import numpy as np
 from ultralytics import YOLO
 
 from calculations import *
-from pose_classifier.classifier import PoseClassifier
+from classifier.classifier import PoseClassifier
 
 COCO_KEYPOINTS = [
     'nose', 'left_eye', 'right_eye', 'left_ear', 'right_ear',
@@ -77,10 +77,10 @@ print("Press 'q' to quit.")
 
 # load models and scaler
 pose = PoseClassifier()
-pose.load_state_dict(torch.load('pose-classifier.pt'))
+pose.load_state_dict(torch.load('classifier/pose-classifier.pt'))
 pose.eval()
-scaler = joblib.load('scaler.pkl')
-yolo = YOLO('yolo11n-pose.pt')
+scaler = joblib.load('classifier/scaler.pkl')
+yolo = YOLO('yolo11s-pose.pt')
 
 # begin analyzing frames
 while True:
