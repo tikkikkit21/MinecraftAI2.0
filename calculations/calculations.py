@@ -1,4 +1,5 @@
 import math
+import pandas as pd
 from typing import Tuple
 
 # calculates length between 2 points
@@ -57,3 +58,7 @@ def calc_vertex_angle(p1: Tuple[float, float], p2: Tuple[float, float], p3: Tupl
         signed_angle += 360
 
     return signed_angle
+
+# helper function for naming x/y labels
+def get_xy(row: pd.Series, label: str) -> Tuple[float, float]:
+    return (row[f'{label}_x'], row[f'{label}_y'])

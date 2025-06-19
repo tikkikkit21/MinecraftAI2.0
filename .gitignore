@@ -1,4 +1,14 @@
+# development
 venv/
+__pycache__/
 results/
-*test*
+
+# dataset
+*.mov
+*.csv
+videos/
+
+# models
+*.pkl
 *.pt
+*.onnx
